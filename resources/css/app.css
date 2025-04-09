@@ -9,3 +9,13 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+.spline-viewer {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+}
+.spline-visible {
+    opacity: 1;
+    pointer-events: auto;
+}

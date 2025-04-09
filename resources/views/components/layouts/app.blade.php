@@ -114,13 +114,26 @@
     
     <x-header />
 
-    <main class="relative flex-grow px-4 md:px-8">
+    <main class="relative flex-grow">
         {{ $slot }}
     </main>
 
     <x-footer />
 
     @stack('scripts')
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const viewers = document.querySelectorAll('spline-viewer');
+                viewers.forEach(viewer => {
+                    viewer.classList.add('spline-visible');
+                });
+            }, 1200); // задержка перед одновременным появлением
+        });
+    </script>
 </body>
 
 </html>
